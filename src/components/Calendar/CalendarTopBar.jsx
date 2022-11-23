@@ -1,23 +1,29 @@
 import React from 'react'
-import styled from 'styled-components';
 import './Calendar.css'
+// import { useKeyPress } from '../../hook/useKeyPress';
 
-const TextWrapper = styled('span')`
-  font-size: 32px;
-  margin-right: 8px;
-`
-
-function CalendarTopBar({today}) {
+function CalendarTopBar({today, prevHandler, todayHandler, nextHandler}) {
+  // const isPressPrev = useKeyPress('ArrowLeft');
+  // const isPressnext = useKeyPress('ArrowRight');
+  // console.log(isPressPrev)
+  // console.log(isPressnext)
   return (
     <div className='DivWrapper'>
       <div className='TextWrapper'>
-        <TextWrapper><b>{today.format('MMMM')}</b></TextWrapper>
-        <TextWrapper>{today.format('YYYY')}</TextWrapper>
+        <span><b>{today.format('MMMM')}</b></span>
+        <span>{today.format('YYYY')}</span>
       </div>
+      
+      {/* <div className='Display_mode'>
+        <button>Day</button>
+        <button>Week</button>
+        <button className='selected-day'>Month</button>
+        <button>Year</button>
+      </div> */}
       <div className='ButtonWrapper'>
-        <button> &lt; </button>
-        <button className='ToDayBatton'><b>ToDay</b></button>
-        <button> &gt; </button>
+        <button onClick={prevHandler}> &lt; </button>
+        <button onClick={todayHandler} className='ToDayBatton'><b>ToDay</b></button>
+        <button onClick={nextHandler}> &gt; </button>
       </div>
     </div>
   )

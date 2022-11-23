@@ -2,14 +2,12 @@
 .GridWrapper{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    /* grid-template-rows: repeat(7, 1fr); */
     grid-gap:1px;
-    background-color: #404040;
+    color:#DDDCDD;
 }
 .CallWrapper{
     min-width: 120px;
-    min-height: 60px;
-    color:#DDDCDD;
 }
 .DayWrapper{
     height: 33px;
@@ -17,6 +15,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 2px;
+}
+.DayWrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    border-radius: 50%;
 }
 
 /* CalendarTopBar */
@@ -35,14 +43,34 @@
     height: 20px;
     margin-right:2px;
     border-radius: 4px;
+    outline: unset;
+    cursor: pointer;
 }
 .ButtonWrapper .ToDayBatton{
-    padding:0 16px;
-
+    padding: 4 8px;
 }
+.TextWrapper span{
+    font-size: 32px;
+    margin-right: 8px;
+}
+/* .Display_mode button{
+    border: none;
+    color: #DDDCDD;
+    background-color: #565759;
+    padding: 4px 8px;
+}
+.Display_mode button:last-child{
+    border-radius: 0px 8px 8px 0px;
+}
+.Display_mode button:first-child{
+    border-radius: 8px 0px 0px 8px;
+}
+.Display_mode .selected-day{
+    color: #565759;
+    background-color: #DDDCDD;
+} */
 
 /* CalendarTitle */
-
 .CalendarTitle{
     background-color: #2a2b2d;
     height: 36px;
